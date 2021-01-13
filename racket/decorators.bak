@@ -1,0 +1,37 @@
+#lang racket
+
+(define ns (make-base-namespace))
+;(define (curry2 f)
+ ; (lambda(x)
+  ;  (lambda(y)
+   ;   (f x y))))
+
+;(define add7-c
+ ; (lambda (m)
+  ;  (lambda (n)
+   ;   (+ m n))))
+
+(define (default-parms f values)
+  (lambda args
+    (if (equal? (length args) (length values))
+        (apply f args) (apply + (flatten (append args (list-tail values (length args))))))))
+
+(define (type-parms f types)
+  (lambda args
+    (define paired (map (lambda (x y) (eval (list x y) ns)) types args))
+    (define res (andmap true? paired))
+      (if (equal? res #t)
+        (apply f args) (error "ERROR MSG"))))
+
+(define (true? x)
+  (if (equal? x #t)
+      #t #f))
+  
+(define (print-it)
+  (print "nothing"))
+
+(define g (type-parms print-it (list)))
+(g)
+  
+;(define l1 (list 'number?))
+;(define l2 (list 2))

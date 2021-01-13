@@ -1,0 +1,7 @@
+	condition	zero	non-zero
+(if0	(-------)	(---)	(----))
+
+
+E ::= (OP E E) | Num | (if0 E E E) | (with SYM E E) | SYM
+OP ::= +|-
+

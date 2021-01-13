@@ -1,0 +1,4 @@
+#lang racket
+
+(define (convertFC lst)
+  (map (lambda (x) (* (- x 32) (/ 5 9))) lst))
