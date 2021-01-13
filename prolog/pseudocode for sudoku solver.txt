@@ -1,3 +1,0 @@
-Starting from the top left corner, get each list from the 2D array
-Get the first element of each list and replace its value (base case is an empty list?)
-Continue to iterate over the rest of the list, doing the same
