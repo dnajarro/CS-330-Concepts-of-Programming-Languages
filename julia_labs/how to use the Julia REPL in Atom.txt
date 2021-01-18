@@ -1,4 +1,0 @@
-To get the Julia REPL working right:
-make sure you're in the right directory
-push!(LOAD_PATH, pwd())
-using Revise
