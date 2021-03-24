@@ -1,10 +1,5 @@
 #lang racket
 
-;;(define (all-even? list)
-  ;;(if (empty> lst) #t
-   ;;   (and (even? (first lst))
-    ;;       (all-even? (rest lst)))})
-
 (define (check-temps1 temps)
   (cond
     [(empty? temps) #t]
